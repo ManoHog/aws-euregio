@@ -70,32 +70,3 @@ async function showStations(url) {
 } showStations("https://static.avalanche.report/weather_stations/stations.geojson");
 
 
-// //Vienna Sehenswürdigkeiten
-// async function showSites(url) {
-//     let response = await fetch(url);
-//     let jsondata = await response.json();
-//     L.geoJSON(jsondata, {
-//         pointToLayer: function(feature, latlng) {
-//             return L.marker(latlng, {
-//                 icon: L.icon({
-//                     iconUrl: "icons/photo.png",
-//                     iconAnchor: [16, 37],
-//                     popupAnchor: [0, -37],
-//                 })
-//             });
-//         },
-//         onEachFeature: function (feature, layer) {
-//             let prop = feature.properties;
-//             layer.bindPopup(`
-//             <img src="${prop.THUMBNAIL}" alt="*">
-//             <h4><a href="${prop.WEITERE_INF}" target=Wien">${prop.NAME}</h4>
-//             <adress>${prop.ADRESSE}</address>
-//             `);
-//             //console.log(feature.properties, prop.NAME);  
-//         }
-//     }).addTo(themaLayer.sites);
-
-//     //console.log(response, jsondata)
-
-// }
-// showSites("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SEHENSWUERDIGOGD&srsName=EPSG:4326&outputFormat=json")
