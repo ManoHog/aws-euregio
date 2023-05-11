@@ -32,6 +32,8 @@ let layerControl = L.control.layers({
     "Temperatur": themaLayer.temperature.addTo(map),
 }).addTo(map);
 
+layerControl.expand();
+
 // Maßstab
 L.control.scale({
     imperial: false,
@@ -76,7 +78,7 @@ function writeTemperatureLayer(jsondata) {
         },
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
-                icon: L.icon({
+                icon: L.divIcon({
                     html: `<span>${feature.properties.LT}</span>`
 
                 })
