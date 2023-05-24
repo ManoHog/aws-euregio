@@ -155,3 +155,15 @@ async function loadStations(url) {
 
 } 
 loadStations("https://static.avalanche.report/weather_stations/stations.geojson");
+
+    // Change default options
+    L.control.rainviewer({ 
+        position: 'bottomleft',
+        nextButtonText: '>',
+        playStopButtonText: 'Play/Stop',
+        prevButtonText: '<',
+        positionSliderLabelText: "Hour:",
+        opacitySliderLabelText: "Opacity:",
+        animationInterval: 500,
+        opacity: 0.5
+    }).addTo(map);
