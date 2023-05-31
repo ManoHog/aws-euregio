@@ -33,7 +33,7 @@ let layerControl = L.control.layers({
     "Wetterstationen": themaLayer.stations,
     "Temperatur": themaLayer.temperature,
     "Wind": themaLayer.wind,
-    "Schneehöhe": themaLayer.snow.addTo(map),
+    "Schneehoehe": themaLayer.snow.addTo(map),
 
 }).addTo(map);
 
@@ -75,7 +75,7 @@ function writeStationLayer(jsondata){
                 <li>Lufttemperatur (°C): ${prop.LT || "kein Wert"} </li>
                 <li>Relative Luftfeuchte (%): ${prop.RH || "kein Wert"} </li>
                 <li>Windgeschwindigkeit (km/h): ${prop.WG || "kein Wert"} </li>
-                <li>Schneehöhe (cm): ${prop.HS || "kein Wert"} </li>
+                <li>Schneehoehe (cm): ${prop.HS || "kein Wert"} </li>
             </ul>
             <span>${pointInTime.toLocaleString()}</span>
             `);
@@ -127,7 +127,7 @@ function writeWindLayer(jsondata) {
 function writeSnowLayer(jsondata) {
     L.geoJSON(jsondata, {
         filter: function(feature) {
-            if (feature.properties.HS > 0 && feature.properties.HS < 900) {
+            if (feature.properties.HS > 0 && feature.properties.HS < 99999) {
                 return true;
             }
         },

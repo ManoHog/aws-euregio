@@ -117,6 +117,11 @@ const COLORS = {
     ],
     snow: [
         {
+            min: 0,
+            max: 1,
+            color: "#fff",
+        },
+        {
             min: 1,
             max: 10,
             color: "#ffffb2",
@@ -160,7 +165,7 @@ const COLORS = {
         },
         {
             min: 400,
-            max: 900,
+            max: 99999,
             color: "#cd0feb",
         }
     ],
